@@ -1,0 +1,26 @@
+.todo-list {
+  text-align: left;
+}
+
+.todo-list h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #343a40;
+  font-size: 1.5rem;
+}
+
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-todos {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  margin-top: 20px;
+} 
