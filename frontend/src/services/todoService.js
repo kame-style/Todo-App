@@ -1,19 +1,19 @@
-import axios from 'axios';
+import { axiosInstance } from './authService';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 const TodoService = {
   async getAllTodos() {
-    const response = await axios.get(`${API_URL}/todos/`);
+    const response = await axiosInstance.get(`${API_URL}/todos/`);
     return response.data;
   },
 
   async getTodoById(id) {
-    const response = await axios.get(`${API_URL}/todos/${id}`);
+    const response = await axiosInstance.get(`${API_URL}/todos/${id}`);
     return response.data;
   },
 
   async createTodo(title, description = '') {
-    const response = await axios.post(`${API_URL}/todos/`, {
+    const response = await axiosInstance.post(`${API_URL}/todos/`, {
       title,
       description,
       completed: false
@@ -22,7 +22,7 @@ const TodoService = {
   },
 
   async updateTodoStatus(id, completed) {
-    const response = await axios.put(`${API_URL}/todos/${id}`, {
+    const response = await axiosInstance.put(`${API_URL}/todos/${id}`, {
       completed
     });
     return response.data;
@@ -30,7 +30,7 @@ const TodoService = {
 
 
   async deleteTodo(id) {
-    const response = await axios.delete(`${API_URL}/todos/${id}`);
+    const response = await axiosInstance.delete(`${API_URL}/todos/${id}`);
     return response.data;
   }
 };
